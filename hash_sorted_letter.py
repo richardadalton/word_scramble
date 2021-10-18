@@ -1,3 +1,5 @@
+# 572 ms
+
 def load_words():
     with open ("/usr/share/dict/words") as f:
         wordlist = f.read().lower().split("\n")
@@ -23,9 +25,9 @@ def solve(words, letters):
 def main():
     words = load_words()
     solve(words, "vegdances")
-    solve(words, "lubecairn")
-    solve(words, "uteisrtac")
-    solve(words, "bttopoasr")
-    solve(words, "inlcertea")
+    # solve(words, "lubecairn")
+    # solve(words, "uteisrtac")
+    # solve(words, "bttopoasr")
+    # solve(words, "inlcertea")
 
 main()
