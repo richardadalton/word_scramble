@@ -34,6 +34,6 @@ def solve(words, letters):
 
 def main():
     words = load_words()
-    solve(words, "rsniuetby")
+    solve(words, "aoeiomsth")
 
 main()
