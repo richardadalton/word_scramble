@@ -5,7 +5,7 @@ def load_words():
 
 
 def can_make(word, letters):
-    letter_list = [l for l in letters]
+    letter_list = list(letters)
 
     for l in word:
         if l not in letter_list:
