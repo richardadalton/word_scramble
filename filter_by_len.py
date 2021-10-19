@@ -1,6 +1,3 @@
-
-# 205ms
-
 def load_words():
     with open ("/usr/share/dict/words") as f:
         words = f.read().lower().split("\n")
