@@ -1,5 +1,7 @@
+# Hash words by their set of letters to narrow search space for a specific word
+
 def load_words():
-    with open ("/usr/share/dict/words") as f:
+    with open ("words.txt") as f:
         wordlist = f.read().lower().split("\n")
 
     words = dict()
@@ -9,6 +11,8 @@ def load_words():
         prev.append(word)
         words[key] = prev
 
+    print("Number of entries in original word list", len(wordlist))
+    print("Number of entries in hash table", len(words))
     return words
 
 def find_matches(words, letters):
@@ -23,10 +27,10 @@ def solve(words, letters):
 
 def main():
     words = load_words()
-    solve(words, "vegdances")
+    # solve(words, "vegdances")
     # solve(words, "lubecairn")
     # solve(words, "uteisrtac")
     # solve(words, "bttopoasr")
-    # solve(words, "inlcertea")
+    solve(words, "inlcertea")
 
 main()

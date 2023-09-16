@@ -1,20 +1,23 @@
+# Hash words by sorting their letters narrow search space for a specific word
+
 def load_words():
-    with open ("/usr/share/dict/words") as f:
+    with open ("words.txt") as f:
         wordlist = f.read().lower().split("\n")
 
     words = dict()
     for word in wordlist:
-        key = len(word)
+        key = "".join(sorted(word))
         prev = words.get(key, [])
         prev.append(word)
         words[key] = prev
 
+    print("Number of entries in original word list", len(wordlist))
+    print("Number of entries in hash table", len(words))
     return words
 
 def find_matches(words, letters):
-    key = len(letters)
-    same_length = words[key]
-    return list(filter(lambda x: ''.join(sorted(x)) == ''.join(sorted(letters)), same_length))
+    key = "".join(sorted(letters))
+    return words.get(key, [])
 
 
 def solve(words, letters):
